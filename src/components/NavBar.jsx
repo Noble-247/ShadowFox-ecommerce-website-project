@@ -83,8 +83,8 @@ const NavBar = () => {
       </div>
       {/* Mobile Menu */}
       <ul
-        className={`md:hidden flex flex-col items-start gap-10 absolute top-[80px] right-0 overflow-hidden px-6 py-10 bg-gray-700 text-white rounded-md transition-all ${
-          visible ? "right-0" : "-right-full"
+        className={`md:hidden flex flex-col items-start gap-10 absolute top-[80px] right-0 overflow-hidden px-6 py-10 bg-gray-700 text-white rounded-md transition-all duration-300 ease-in-out transform ${
+          visible ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <li>
