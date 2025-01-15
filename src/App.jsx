@@ -11,6 +11,7 @@ import PlaceOrder from "./pages/PlaceOrder";
 import NotFound from "./pages/NotFound";
 import NavBar from "./components/NavBar";
 import ShopContextProvider from "./context/ShopContext";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path='place-order' element={<PlaceOrder />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
+          <Footer />
         </div>
       </ShopContextProvider>
     </Router>
