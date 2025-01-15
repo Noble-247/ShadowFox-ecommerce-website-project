@@ -1,10 +1,10 @@
 const NewsLetterBox = () => {
   return (
-    <section className='text-center my-20'>
+    <section className='text-center my-20 py-10'>
       <p className='text-2xl font-medium text-gray-800'>
         Subscribe now and get 20% off your first purchase
       </p>
-      <p className='text-gray-400 mt-3'>
+      <p className='text-gray-500 mt-3'>
         Stay up to date on exclusive offers and new arrivals when you sign up
         for our newsletter today!
       </p>
@@ -19,7 +19,7 @@ const NewsLetterBox = () => {
           pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
           required
         />
-        <button className='bg-gray-800 text-white rounded-md hover:text-gray-800 hover:bg-white hover:border border-gray-800 transition-all text-sm px-8 py-3'>
+        <button className='bg-red-900 text-white rounded-sm hover:text-gray-100 hover:bg-red-700 transition-all text-sm px-8 py-3'>
           SUBSCRIBE!
         </button>
       </form>

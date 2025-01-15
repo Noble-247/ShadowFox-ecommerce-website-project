@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       <section className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-20 mt-40 text-sm'>
         <article>
-          <img src={assets.logo} alt='Website Logo' className='mb-5 w-32' />
+          <img src={assets.logo1} alt='Website Logo' className='mb-5 w-32' />
           <p className='w-full md:w-2/3 text-gray-600'>
             Welcome to our e-commerce website. We offer a wide range of products
             to cater to all your needs. Our mission is to provide quality

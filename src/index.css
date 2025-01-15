@@ -5,12 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
-a.active hr {
-  display: block;
-}
-
 * {
   font-family: "Outfit", sans-serif;
+}
+
+a.active hr {
+  display: block;
 }
 
 .prata-regular {

@@ -15,9 +15,9 @@ const NavBar = () => {
   console.log(visible);
 
   return (
-    <nav className='flex items-center justify-between py-5 font-medium'>
+    <nav className='flex items-center justify-between py-5 font-semibold'>
       <NavLink to='/'>
-        <img src={assets.logo} alt='Website Logo' />
+        <img src={assets.logo1} alt='Website Logo' />
       </NavLink>
 
       <ul className='hidden md:flex gap-5 text-sm text-gray-700'>
@@ -55,16 +55,16 @@ const NavBar = () => {
         <div className='group relative'>
           <FaUser className='text-[1.2rem] text-gray-700 cursor-pointer' />
           <div className='group-hover:block hidden absolute right-0 dropdown-menu shadow-md p-4'>
-            <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded-md'>
-              <p className='cursor-pointer hover:text-black'>My Profile</p>
-              <p className='cursor-pointer hover:text-black'>My Orders</p>
-              <p className='cursor-pointer hover:text-black'>Logout</p>
+            <div className='flex flex-col gap-6 w-36 py-3 px-5 bg-gray-100 text-gray-700 rounded-md'>
+              <p className='cursor-pointer hover:text-gray-900'>My Profile</p>
+              <p className='cursor-pointer hover:text-gray-900'>My Orders</p>
+              <p className='cursor-pointer hover:text-gray-900'>Logout</p>
             </div>
           </div>
         </div>
         <NavLink to='/cart' className='relative'>
-          <FaShoppingCart className='text-[1.2rem]' />
-          <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-red-700 text-white aspect-square rounded-full text-[8px]'>
+          <FaShoppingCart className='text-[1.2rem] text-gray-700' />
+          <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-red-900 text-white aspect-square rounded-full text-[8px]'>
             10
           </p>
         </NavLink>
@@ -83,9 +83,8 @@ const NavBar = () => {
       </div>
       {/* Mobile Menu */}
       <ul
-        className={`md:hidden flex flex-col items-start gap-10 absolute top-[80px] right-0 overflow-hidden px-6 py-10 bg-gray-700 text-white rounded-md transition-all duration-300 ease-in-out transform ${
-          visible ? "translate-x-0" : "translate-x-[1000px]"
-        }`}
+        className={`md:hidden flex flex-col items-start gap-10 absolute top-[80px] right-0 overflow-hidden px-6 py-10 bg-gray-700 text-white rounded-md transition-opacity duration-300 ease-in-out 
+          ${visible ? "opacity-100" : "opacity-0"}`}
       >
         <li>
           <NavLink

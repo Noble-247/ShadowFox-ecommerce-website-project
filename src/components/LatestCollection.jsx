@@ -16,10 +16,10 @@ const LatestCollection = () => {
   }, []);
 
   return (
-    <section className='my-10'>
-      <div className='text-center py-8 text-3xl'>
+    <section className='my-20 py-10'>
+      <div className='text-center py-8 text-2xl md:text-3xl'>
         <Title titleOne='LATEST' titleTwo='COLLECTIONS' />
-        <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
+        <p className='w-3/4 m-auto text-sm md:text-base text-gray-600'>
           Discover the latest trends and styles in our newest collection. From
           chic apparel to must-have accessories, our latest arrivals are
           designed to keep you ahead of the fashion curve. Shop now and elevate
