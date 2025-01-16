@@ -20,14 +20,12 @@ const BestSeller = () => {
   }, []);
 
   return (
-    <section className='my-10'>
+    <section className='mt-10'>
       <div className='text-center text-2xl md:text-3xl py-8'>
         <Title titleOne='BEST' titleTwo='SELLERS' />
         <p className='w-3/4 m-auto text-sm md:text-base text-gray-600'>
-          Discover the best selling products in our store. From chic apparel to
-          must-have accessories, our best sellers are designed to keep you ahead
-          of the fashion curve. Shop now and elevate your wardrobe with our
-          curated selection of contemporary pieces.
+          Discover the best selling products in our store. Shop now and elevate
+          your wardrobe with our curated selection of contemporary pieces.
         </p>
       </div>
       {/* Render the bestSeller products */}

@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import NavBar from "./components/NavBar";
 import ShopContextProvider from "./context/ShopContext";
 import Footer from "./components/Footer";
+import PrivatePolicy from "./pages/PrivatePolicy";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path='login' element={<Login />} />
             <Route path='orders' element={<Orders />} />
             <Route path='place-order' element={<PlaceOrder />} />
+            <Route path='privacy-policy' element={<PrivatePolicy />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />

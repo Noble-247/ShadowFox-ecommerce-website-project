@@ -20,7 +20,7 @@ const NavBar = () => {
         <img src={assets.logo1} alt='Website Logo' />
       </NavLink>
 
-      <ul className='hidden md:flex gap-5 text-sm text-gray-700'>
+      <ul className='hidden md:flex gap-5 text-sm text-red-900'>
         <li>
           <NavLink to='/' end className={`flex flex-col items-center gap-1`}>
             <p>HOME</p>
@@ -83,7 +83,7 @@ const NavBar = () => {
       </div>
       {/* Mobile Menu */}
       <ul
-        className={`md:hidden flex flex-col items-start gap-10 absolute top-[80px] right-0 overflow-hidden px-6 py-10 bg-gray-700 text-white rounded-md transition-opacity duration-300 ease-in-out 
+        className={`md:hidden flex flex-col items-start gap-10 absolute top-[80px] right-0 overflow-hidden px-6 py-10 bg-red-900 text-white rounded-md transition-opacity duration-300 ease-in-out 
           ${visible ? "opacity-100" : "opacity-0"}`}
       >
         <li>
