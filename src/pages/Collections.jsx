@@ -33,13 +33,34 @@ const Collections = () => {
     }
   }
 
-  useEffect(() => {
-    setFilterProducts(products);
-  }, []);
+  function applyAllCategoryFilters() {
+    let copyOfProducts = [...products];
+
+    if (category.length > 0) {
+      copyOfProducts = copyOfProducts.filter((item) =>
+        category.includes(item.category)
+      );
+    }
+
+    if (subCategory.length > 0) {
+      copyOfProducts = copyOfProducts.filter((item) =>
+        subCategory.includes(item.subCategory)
+      );
+    }
+
+    // Save the result of the filter process into the filterProducts array
+    setFilterProducts(copyOfProducts);
+  }
 
   useEffect(() => {
+    applyAllCategoryFilters();
+  }, [category, setCategory, subCategory, setSubCategory]);
+
+  // ======== Testing Filter Array ===========
+  /*  useEffect(() => {
     console.log(category, subCategory);
-  }, [category, subCategory]);
+  }, [category, subCategory]); */
+  // =========            ================
 
   return (
     <main className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
