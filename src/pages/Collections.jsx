@@ -12,7 +12,9 @@ const Collections = () => {
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
+  const [sortType, setSortType] = useState("Relevant");
 
+  // Add or remove items from category
   function toggleCategory(event) {
     if (category.includes(event.target.value)) {
       setCategory((previous) =>
@@ -23,6 +25,7 @@ const Collections = () => {
     }
   }
 
+  // Add or remove items from subCategory
   function toggleSubCategory(event) {
     if (subCategory.includes(event.target.value)) {
       setSubCategory((previous) =>
@@ -52,9 +55,35 @@ const Collections = () => {
     setFilterProducts(copyOfProducts);
   }
 
+  function sortFilteredProducts() {
+    let copyOfFilterProducts = [...filterProducts];
+
+    switch (sortType) {
+      case "low-high":
+        setFilterProducts(
+          copyOfFilterProducts.sort((a, b) => a.price - b.price)
+        );
+        break;
+
+      case "high-low":
+        setFilterProducts(
+          copyOfFilterProducts.sort((a, b) => b.price - a.price)
+        );
+        break;
+
+      default:
+        applyAllCategoryFilters();
+        break;
+    }
+  }
+
   useEffect(() => {
     applyAllCategoryFilters();
   }, [category, setCategory, subCategory, setSubCategory]);
+
+  useEffect(() => {
+    sortFilteredProducts();
+  }, [sortType]);
 
   // ======== Testing Filter Array ===========
   /*  useEffect(() => {
@@ -159,8 +188,11 @@ const Collections = () => {
         <div className='flex justify-between text-base sm:text-2xl mb-4'>
           <Title titleOne='ALL' titleTwo='COLLECTIONS' />
           {/* Sort Products */}
-          <select className='border-2 border-gray-300 text-sm px-2'>
-            <option className='hover:bg-red-900' value='relevance'>
+          <select
+            onChange={(event) => setSortType(event.target.value)}
+            className='border-2 border-gray-300 text-sm px-2'
+          >
+            <option className='hover:bg-red-900' value='relevant'>
               Sort by: Relevance
             </option>
             <option value='low-high'>Sort by: Low to High</option>
