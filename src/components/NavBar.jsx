@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { assets } from "../assets/assets";
 import { NavLink } from "react-router-dom";
 import {
@@ -8,9 +8,19 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
+import { ShopContext } from "../context/ShopContext";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [visible, setVisible] = useState(false);
+  const { setShowSearchField } = useContext(ShopContext);
+  const navigate = useNavigate();
+
+  // Function to show the searchField that is initially set to hidden and thereafter, navigate to the collections page
+  function showSearchField() {
+    setShowSearchField(true);
+    navigate("/collections");
+  }
 
   console.log(visible);
 
@@ -51,7 +61,10 @@ const NavBar = () => {
       </ul>
 
       <div className='flex items-center gap-6 '>
-        <FaSearch className='text-[1.2rem] text-gray-700 cursor-pointer' />
+        <FaSearch
+          onClick={showSearchField}
+          className='text-[1.2rem] text-gray-700 cursor-pointer'
+        />
         <div className='group relative'>
           <FaUser className='text-[1.2rem] text-gray-700 cursor-pointer' />
           <div className='group-hover:block hidden absolute right-0 dropdown-menu shadow-md p-4'>

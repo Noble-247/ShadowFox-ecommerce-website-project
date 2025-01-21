@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import PropTypes from "prop-types";
 import { products } from "../assets/assets";
 
@@ -8,10 +8,17 @@ const ShopContextProvider = ({ children }) => {
   const currency = "$";
   const deliveryFee = 10;
 
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showSearchField, setShowSearchField] = useState(false);
+
   const value = {
     products,
     currency,
     deliveryFee,
+    searchQuery,
+    setSearchQuery,
+    showSearchField,
+    setShowSearchField,
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;

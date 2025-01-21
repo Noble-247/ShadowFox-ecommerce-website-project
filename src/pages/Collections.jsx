@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 import ProductItem from "../components/ProductItem";
 
 const Collections = () => {
-  const { products } = useContext(ShopContext);
+  const { products, searchQuery, setSearchQuery } = useContext(ShopContext);
   const [showFilter, setShowFiter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
@@ -36,6 +36,7 @@ const Collections = () => {
     }
   }
 
+  // Filter collections based on the given item category or subCategory
   function applyAllCategoryFilters() {
     let copyOfProducts = [...products];
 
@@ -55,6 +56,7 @@ const Collections = () => {
     setFilterProducts(copyOfProducts);
   }
 
+  // Sort collections based on the selected criteria from the form select option
   function sortFilteredProducts() {
     let copyOfFilterProducts = [...filterProducts];
 
@@ -77,6 +79,18 @@ const Collections = () => {
     }
   }
 
+  // Search for items based on their name or ....
+  function searchCollections() {
+    let copyOfProducts = [...products];
+
+    copyOfProducts = copyOfProducts.filter((item) =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    // Save the result of the filter process into the filterProducts array
+    setFilterProducts(copyOfProducts);
+  }
+
   useEffect(() => {
     applyAllCategoryFilters();
   }, [category, setCategory, subCategory, setSubCategory]);
@@ -84,6 +98,10 @@ const Collections = () => {
   useEffect(() => {
     sortFilteredProducts();
   }, [sortType]);
+
+  useEffect(() => {
+    searchCollections();
+  }, [searchQuery, setSearchQuery]);
 
   // ======== Testing Filter Array ===========
   /*  useEffect(() => {
