@@ -14,12 +14,15 @@ import ShopContextProvider from "./context/ShopContext";
 import Footer from "./components/Footer";
 import PrivatePolicy from "./pages/PrivatePolicy";
 import SearchBar from "./components/SearchBar";
+import { ToastContainer /* toast */ } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <Router>
       <ShopContextProvider>
         <div className='px-4 sm:px-[4.5vw] md:px-[5vw] lg:px-[7vw] xl:px-[14vw]'>
+          <ToastContainer />
           <NavBar />
           <SearchBar />
           <Routes>

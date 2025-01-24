@@ -38,7 +38,7 @@ const Collections = () => {
 
   // Filter collections based on the given item category or subCategory
   function applyAllCategoryFilters() {
-    let copyOfProducts = [...products];
+    let copyOfProducts = products.slice();
 
     if (category.length > 0) {
       copyOfProducts = copyOfProducts.filter((item) =>
@@ -58,7 +58,7 @@ const Collections = () => {
 
   // Sort collections based on the selected criteria from the form select option
   function sortFilteredProducts() {
-    let copyOfFilterProducts = [...filterProducts];
+    let copyOfFilterProducts = filterProducts.slice();
 
     switch (sortType) {
       case "low-high":
@@ -81,7 +81,7 @@ const Collections = () => {
 
   // Search for items based on their name or ....
   function searchCollections() {
-    let copyOfProducts = [...products];
+    let copyOfProducts = products.slice();
 
     copyOfProducts = copyOfProducts.filter((item) =>
       item.name.toLowerCase().includes(searchQuery.toLowerCase())

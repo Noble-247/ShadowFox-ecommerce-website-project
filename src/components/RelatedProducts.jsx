@@ -11,7 +11,7 @@ const RelatedProducts = ({ category, subCategory }) => {
 
   useEffect(() => {
     if (products.length > 0) {
-      let copyOfProducts = [...products];
+      let copyOfProducts = products.slice();
 
       copyOfProducts = copyOfProducts.filter(
         (item) => category === item.category && subCategory === item.subCategory

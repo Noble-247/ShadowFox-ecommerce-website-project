@@ -8,7 +8,7 @@ import { SiTicktick } from "react-icons/si";
 
 const Product = () => {
   const { productId } = useParams();
-  const { products, currency } = useContext(ShopContext);
+  const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(null);
   const [mainProductImage, setMainProductImage] = useState("");
   const [productSize, setProductSize] = useState("");
@@ -16,7 +16,7 @@ const Product = () => {
   // Get the product data from the products array
   const fetchProductData = useCallback(() => {
     const product = products.find((item) => item._id === productId);
-    console.log(product);
+    // console.log(product);
     // Check if product exists
     if (product) {
       setProductData(product);
@@ -92,7 +92,10 @@ const Product = () => {
                       </button>
                     ))}
                   </div>{" "}
-                  <button className='bg-red-900 text-white px-8 py-3 text-sm active:bg-red-700'>
+                  <button
+                    onClick={() => addToCart(productData._id, productSize)}
+                    className='bg-red-900 text-white px-8 py-3 text-sm active:bg-red-700'
+                  >
                     ADD TO CART
                   </button>
                   <hr className='mt-5' />

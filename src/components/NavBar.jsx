@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearchField } = useContext(ShopContext);
+  const { setShowSearchField, getCartCount } = useContext(ShopContext);
   const navigate = useNavigate();
 
   // Function to show the searchField that is initially set to hidden and thereafter, navigate to the collections page
@@ -78,7 +78,7 @@ const NavBar = () => {
         <NavLink to='/cart' className='relative'>
           <FaShoppingCart className='text-[1.2rem] text-gray-700' />
           <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-red-900 text-white aspect-square rounded-full text-[8px]'>
-            10
+            {getCartCount()}
           </p>
         </NavLink>
         {/* Mobile Menu Icon */}
