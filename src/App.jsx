@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <ShopContextProvider>
-        <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] xl:px-[17vw]'>
+        <div className='px-4 sm:px-[4.5vw] md:px-[5vw] lg:px-[7vw] xl:px-[14vw]'>
           <NavBar />
           <SearchBar />
           <Routes>

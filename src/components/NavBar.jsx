@@ -22,7 +22,7 @@ const NavBar = () => {
     navigate("/collections");
   }
 
-  console.log(visible);
+  // console.log(visible)
 
   return (
     <nav className='flex items-center justify-between py-5 font-semibold'>
