@@ -62,6 +62,25 @@ const ShopContextProvider = ({ children }) => {
     setCartItems(cartData);
   }
 
+  function getTotalCartAmount() {
+    let totalCartAmount = 0;
+
+    for (const items in cartItems) {
+      let itemInfo = products.find((product) => product._id === items);
+      for (const item in cartItems[items]) {
+        try {
+          if (cartItems[items][item] > 0) {
+            totalCartAmount += itemInfo.price * cartItems[items][item];
+          }
+        } catch (error) {
+          console.log("Error:", error);
+        }
+      }
+    }
+
+    return totalCartAmount;
+  }
+
   const value = {
     products,
     currency,
@@ -74,6 +93,7 @@ const ShopContextProvider = ({ children }) => {
     addToCart,
     getCartCount,
     updateCartQuantity,
+    getTotalCartAmount,
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
