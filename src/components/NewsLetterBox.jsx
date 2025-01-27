@@ -1,4 +1,10 @@
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+
+function handleSubmit(event) {
+  event.preventDefault();
+  toast.info("This feature will be enabled soon. stay tuned 😊!");
+}
 
 const NewsLetterBox = () => {
   return (
@@ -21,7 +27,7 @@ const NewsLetterBox = () => {
           for our newsletter today!
         </p>
         <form
-          action='post'
+          onSubmit={handleSubmit}
           className='w-full md:w-[65%] flex items-center gap-3 mx-auto my-6 border pl-3'
         >
           <input

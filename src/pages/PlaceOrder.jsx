@@ -37,7 +37,7 @@ const PlaceOrder = () => {
             placeholder='Your first name'
             pattern='[A-Za-z]{2,}'
             required
-            className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
+            className='border border-gray-300 rounded-md py-1.5 px-3.5 w-full'
           />
           <input
             type='text'
@@ -45,7 +45,7 @@ const PlaceOrder = () => {
             placeholder='Your last name'
             pattern='[A-Za-z]{2,}'
             required
-            className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
+            className='border border-gray-300 rounded-md py-1.5 px-3.5 w-full'
           />
         </div>
         <input
@@ -54,14 +54,14 @@ const PlaceOrder = () => {
           placeholder='Your email'
           pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
           required
-          className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
+          className='border border-gray-300 rounded-md py-1.5 px-3.5 w-full'
         />
         <input
           type='text'
           name='streetAddress'
           placeholder='Your street address'
           required
-          className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
+          className='border border-gray-300 rounded-md py-1.5 px-3.5 w-full'
         />
         <div className='flex gap-3'>
           <input
@@ -70,7 +70,7 @@ const PlaceOrder = () => {
             placeholder='City'
             pattern='[A-Za-z]{2,}'
             required
-            className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
+            className='border border-gray-300 rounded-md py-1.5 px-3.5 w-full'
           />
           <input
             type='text'
@@ -78,7 +78,7 @@ const PlaceOrder = () => {
             placeholder='State'
             pattern='[A-Za-z]{2,}'
             required
-            className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
+            className='border border-gray-300 rounded-md py-1.5 px-3.5 w-full'
           />
         </div>
         <div className='flex gap-3'>
@@ -88,14 +88,14 @@ const PlaceOrder = () => {
             placeholder='Zip Code'
             pattern='[0-9]{5}'
             required
-            className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
+            className='border border-gray-300 rounded-md py-1.5 px-3.5 w-full'
           />
           <input
             type='text'
             placeholder='country'
             pattern='[A-Za-z]{2,}'
             required
-            className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
+            className='border border-gray-300 rounded-md py-1.5 px-3.5 w-full'
           />
         </div>
         <input
@@ -104,7 +104,7 @@ const PlaceOrder = () => {
           placeholder='Your phone number'
           pattern='(\d{3}[-\s]?\d{3}[-\s]?\d{4}|\(\d{3}\)\s?\d{3}[-\s]?\d{4})'
           required
-          className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
+          className='border border-gray-300 rounded-md py-1.5 px-3.5 w-full'
         />
       </section>
 

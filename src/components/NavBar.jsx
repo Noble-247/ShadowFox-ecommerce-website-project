@@ -66,7 +66,9 @@ const NavBar = () => {
           className='text-[1.2rem] text-gray-700 cursor-pointer'
         />
         <div className='group relative'>
-          <FaUser className='text-[1.2rem] text-gray-700 cursor-pointer' />
+          <NavLink to='/login'>
+            <FaUser className='text-[1.2rem] text-gray-700 cursor-pointer' />
+          </NavLink>
           <div className='group-hover:block hidden absolute right-0 dropdown-menu shadow-md p-4'>
             <div className='flex flex-col gap-6 w-36 py-3 px-5 bg-gray-100 text-gray-700 rounded-md'>
               <p className='cursor-pointer hover:text-gray-900'>My Profile</p>
