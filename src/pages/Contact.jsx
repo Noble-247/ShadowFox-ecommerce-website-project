@@ -1,14 +1,16 @@
+import useTitle from "../customHooks/useTitle";
 import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import { toast } from "react-toastify";
 import NewsLetterBox from "../components/NewsLetterBox";
 
-function handleClick(event) {
-  event.preventDefault();
-  toast.info("This feature will be enabled soon. stay tuned 😊!");
-}
-
 const Contact = () => {
+  useTitle("Contact | Xumia");
+
+  function handleClick(event) {
+    event.preventDefault();
+    toast.info("This feature will be enabled soon. stay tuned 😊!");
+  }
   return (
     <section>
       <div className='text-center text-2xl pt-10 border-t'>

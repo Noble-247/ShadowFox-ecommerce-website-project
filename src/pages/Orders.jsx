@@ -1,10 +1,18 @@
+import useTitle from "../customHooks/useTitle";
 import { useContext } from "react";
 import Title from "../components/Title";
 import { ShopContext } from "../context/ShopContext";
 import { v4 as uuidv4 } from "uuid";
+import { toast } from "react-toastify";
 
 const Orders = () => {
+  useTitle("Orders | Xumia");
+
   const { products, currency } = useContext(ShopContext);
+
+  function handleClick() {
+    toast.info("This feature will be enabled soon. stay tuned 😊!");
+  }
 
   return (
     <section className='border-t pt-10'>
@@ -43,7 +51,10 @@ const Orders = () => {
                 <p className='min-w-2 h-2 rounded-full bg-green-500'></p>
                 <p className='text-sm md:text-base'>Ready to ship</p>
               </div>
-              <button className='border px-4 py-2 text-sm font-medium rounded-sm'>
+              <button
+                onClick={handleClick}
+                className='border px-4 py-2 text-sm font-medium rounded-sm'
+              >
                 Track Order
               </button>
             </div>

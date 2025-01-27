@@ -1,4 +1,8 @@
+import useTitle from "../customHooks/useTitle";
+
 const PrivatePolicy = () => {
+  useTitle("Private Policy | Xumia");
+
   return (
     <div className='bg-gray-100 text-gray-800 p-8'>
       <div className='max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md'>

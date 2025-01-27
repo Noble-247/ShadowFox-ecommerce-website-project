@@ -1,3 +1,4 @@
+import useTitle from "../customHooks/useTitle";
 import { useState } from "react";
 import CartTotal from "../components/CartTotal";
 import Title from "../components/Title";
@@ -6,6 +7,8 @@ import { FaCcPaypal } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 
 const PlaceOrder = () => {
+  useTitle("Place Order | Xumia");
+
   const method = {
     cashOnDelivery: "Cash On Delivery",
     stripe: "Stripe",

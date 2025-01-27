@@ -1,3 +1,4 @@
+import useTitle from "../customHooks/useTitle";
 import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
@@ -6,6 +7,8 @@ import CartTotal from "../components/CartTotal";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+  useTitle("Cart | Xumia");
+
   const { products, currency, cartItems, updateCartQuantity } =
     useContext(ShopContext);
   const [cartData, setCartData] = useState([]);

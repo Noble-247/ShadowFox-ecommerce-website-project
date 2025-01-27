@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import useTitle from "../customHooks/useTitle";
 import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { BiChevronsUp } from "react-icons/bi";
@@ -7,6 +8,8 @@ import { v4 as uuidv4 } from "uuid";
 import ProductItem from "../components/ProductItem";
 
 const Collections = () => {
+  useTitle("Collections | Xumia");
+
   const { products, searchQuery, setSearchQuery } = useContext(ShopContext);
   const [showFilter, setShowFiter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);

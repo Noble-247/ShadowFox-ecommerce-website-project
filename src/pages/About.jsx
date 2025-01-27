@@ -1,8 +1,11 @@
+import useTitle from "../customHooks/useTitle";
 import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import NewsLetterBox from "../components/NewsLetterBox";
 
 const About = () => {
+  useTitle("About | Xumia");
+
   return (
     <section>
       <header className='text-2xl text-center pt-16 border-t'>

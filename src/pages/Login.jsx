@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import useTitle from "../customHooks/useTitle";
 
 const Login = () => {
+  useTitle("Login or Signup | Xumia");
+
   const [currentState, setCurrentState] = useState("Create Account"); // Sign In or Create Account
 
   function handleSubmit(event) {

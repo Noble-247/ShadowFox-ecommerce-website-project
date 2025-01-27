@@ -5,8 +5,11 @@ import { IoStarSharp } from "react-icons/io5";
 import NotFound from "./NotFound";
 import RelatedProducts from "../components/RelatedProducts";
 import { SiTicktick } from "react-icons/si";
+import useTitle from "../customHooks/useTitle";
 
 const Product = () => {
+  useTitle("Product | Xumia");
+
   const { productId } = useParams();
   const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(null);

@@ -1,6 +1,9 @@
+import useTitle from "../customHooks/useTitle";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
+  useTitle("Page Not Found | Xumia");
+
   return (
     <section className='flex items-center justify-center h-screen bg-white'>
       <div className='text-center'>
