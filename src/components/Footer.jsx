@@ -68,7 +68,7 @@ const Footer = () => {
                   href='mailto:info@example.com'
                   className='hover:underline hover:text-red-900'
                 >
-                  info@example.com
+                  info@xumia.com
                 </a>
               </li>
               <li>
