@@ -18,7 +18,7 @@ const Home = () => {
   if (showModal === true) {
     return (
       <div className='fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center'>
-        <div className='bg-white p-6 rounded-lg shadow-xl max-w-md'>
+        <div className='bg-white p-6 rounded-lg shadow-xl w-[80%] max-w-md'>
           <h2 className='text-xl font-bold mb-4'>Under Construction</h2>
           <p className='mb-6'>
             This website is currently under construction and will be fully ready
