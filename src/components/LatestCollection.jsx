@@ -3,6 +3,8 @@ import { ShopContext } from "../context/ShopContext";
 import Title from "./Title";
 import { v4 as uuidv4 } from "uuid";
 import ProductItem from "./ProductItem";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa6";
 
 const LatestCollection = () => {
   const { products } = useContext(ShopContext);
@@ -37,6 +39,15 @@ const LatestCollection = () => {
             price={item.price}
           />
         ))}
+      </div>
+
+      <div className='text-center mt-8'>
+        <Link
+          to='/collections'
+          className='inline-block px-6 py-2 text-gray-100 bg-red-900 hover:bg-red-700 rounded-md transition-colors'
+        >
+          See More <FaArrowRight className="inline"/>
+        </Link>
       </div>
     </section>
   );

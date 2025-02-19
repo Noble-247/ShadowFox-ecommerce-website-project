@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
 
 const Hero = () => {
@@ -14,7 +15,7 @@ const Hero = () => {
             Latest Arrivals
           </h1>
           <div className='flex items-center gap-2'>
-            <p className='font-semibold text-sm md:text-base'>SHOP NOW</p>
+            <p className='font-semibold text-sm md:text-base'><Link to={"/collections"}>SHOP NOW</Link></p>
             <p className='w-8 md:w-11 h-[2px] bg-gray-700'></p>
           </div>
         </div>
