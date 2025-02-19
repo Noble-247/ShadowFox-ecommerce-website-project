@@ -98,8 +98,8 @@ const NavBar = () => {
       </div>
       {/* Mobile Menu */}
       <ul
-        className={`md:hidden flex flex-col items-start gap-10 absolute top-[80px] right-0 overflow-hidden px-6 py-10 bg-red-900 text-white rounded-md transition-opacity duration-300 ease-in-out 
-          ${visible ? "opacity-100" : "opacity-0"}`}
+        className={`md:hidden flex flex-col items-start gap-10 absolute top-[80px] right-0 overflow-hidden px-6 py-10 bg-red-900 text-white rounded-md transition-all duration-300 ease-in-out 
+          ${visible ? "opacity-100" : "opacity-0 hidden"}`}
       >
         <li>
           <NavLink
