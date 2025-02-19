@@ -37,6 +37,8 @@ const ShopContextProvider = ({ children }) => {
     }
     // Update the cartItems state
     setCartItems(cartData);
+
+    toast.success("Product added to cart!");
   }
 
   function getCartCount() {
