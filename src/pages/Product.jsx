@@ -36,10 +36,10 @@ const Product = () => {
       {productData ? (
         <article className='border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100'>
           {/* Product Data */}
-          <div className='flex gap-12 sm:gap-12 flex-col sm:flex-row'>
+          <div className='flex flex-col sm:flex-row gap-12 sm:gap-12'>
             {/* Product Image */}
-            <div className='flex flex-1 flex-col-reverse gap-3 sm:flex-row'>
-              <div className='flex sm:flex-col overflow-x-auto justify-between sm:justify-normal sm:w-[10%] w-full'>
+            <div className='flex flex-col-reverse sm:flex-row flex-1 gap-3'>
+              <div className='flex sm:flex-col overflow-x-auto justify-between sm:justify-normal w-full sm:w-[10%]'>
                 {productData.image.map((item, index) => (
                   <img
                     onClick={() => setMainProductImage(item)}
@@ -57,77 +57,77 @@ const Product = () => {
                   className='w-full h-auto'
                 />
               </div>
+            </div>
 
-              {/* Product Details */}
-              <div className='flex-1'>
-                <h1 className='font-medium text-2xl mt-2'>
-                  {productData.name}
-                </h1>
-                <div className='flex items-center gap-1 mt-2'>
-                  <IoStarSharp className='text-yellow-700' />
-                  <IoStarSharp className='text-yellow-700' />
-                  <IoStarSharp className='text-yellow-700' />
-                  <IoStarSharp className='text-yellow-700' />
-                  <IoStarSharp className='text-gray-400' />
-                  <p className='pl-2'>(120)</p>
-                </div>
-                <p className='mt-5 text-3xl font-medium'>
-                  {currency}
-                  {productData.price}
-                </p>
-                <p className='mt-5 text-gray-500'>
-                  <a className='hover:underline block' href='#full-Description'>
-                    {productData.description.slice(0, 200)}.... See More
-                  </a>
-                </p>
-                <div className='flex flex-col gap-4 my-8'>
-                  <p>Select Size</p>
-                  <div className='flex gap-2'>
-                    {productData.sizes.map((item, index) => (
-                      <button
-                        onClick={() => setProductSize(item)}
-                        className={`border py-2 px-4 bg-gray-300 rounded-md ${
-                          productSize === item ? "border-red-900" : ""
-                        }`}
-                        key={index}
-                      >
-                        {item}
-                      </button>
-                    ))}
-                  </div>{" "}
-                  <button
-                    onClick={() => addToCart(productData._id, productSize)}
-                    className='bg-red-900 text-white px-8 py-3 text-sm active:bg-red-700'
-                  >
-                    ADD TO CART
-                  </button>
-                  <hr className='mt-5' />
-                  <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
-                    <p>
-                      <SiTicktick className='inline-block mr-2' />
-                      <span className='inline-block'>
-                        100% original Product
-                      </span>
-                    </p>
-                    <p>
-                      <SiTicktick className='inline-block mr-2' />
-                      <span className='inline-block'>
-                        Free Delivery on order above $50
-                      </span>
-                    </p>
-                    <p>
-                      <SiTicktick className='inline-block mr-2' />
-                      <span className='inline-block'>
-                        Pay on delivery is available on this product
-                      </span>
-                    </p>
-                    <p>
-                      <SiTicktick className='inline-block mr-2' />
-                      <span className='inline-block'>
-                        Easy return and exchange policy within 7 days
-                      </span>
-                    </p>
-                  </div>
+            {/* Product Details */}
+            <div className='flex-1'>
+              <h1 className='font-medium text-2xl mt-2'>
+                {productData.name}
+              </h1>
+              <div className='flex items-center gap-1 mt-2'>
+                <IoStarSharp className='text-yellow-700' />
+                <IoStarSharp className='text-yellow-700' />
+                <IoStarSharp className='text-yellow-700' />
+                <IoStarSharp className='text-yellow-700' />
+                <IoStarSharp className='text-gray-400' />
+                <p className='pl-2'>(120)</p>
+              </div>
+              <p className='mt-5 text-3xl font-medium'>
+                {currency}
+                {productData.price}
+              </p>
+              <p className='mt-5 text-gray-500'>
+                <a className='hover:underline block' href='#full-Description'>
+                  {productData.description.slice(0, 200)}.... See More
+                </a>
+              </p>
+              <div className='flex flex-col gap-4 my-8'>
+                <p>Select Size</p>
+                <div className='flex gap-2'>
+                  {productData.sizes.map((item, index) => (
+                    <button
+                      onClick={() => setProductSize(item)}
+                      className={`border py-2 px-4 bg-gray-300 rounded-md ${
+                        productSize === item ? "border-red-900" : ""
+                      }`}
+                      key={index}
+                    >
+                      {item}
+                    </button>
+                  ))}
+                </div>{" "}
+                <button
+                  onClick={() => addToCart(productData._id, productSize)}
+                  className='bg-red-900 text-white px-8 py-3 text-sm active:bg-red-700'
+                >
+                  ADD TO CART
+                </button>
+                <hr className='mt-5' />
+                <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
+                  <p>
+                    <SiTicktick className='inline-block mr-2' />
+                    <span className='inline-block'>
+                      100% original Product
+                    </span>
+                  </p>
+                  <p>
+                    <SiTicktick className='inline-block mr-2' />
+                    <span className='inline-block'>
+                      Free Delivery on order above $50
+                    </span>
+                  </p>
+                  <p>
+                    <SiTicktick className='inline-block mr-2' />
+                    <span className='inline-block'>
+                      Pay on delivery is available on this product
+                    </span>
+                  </p>
+                  <p>
+                    <SiTicktick className='inline-block mr-2' />
+                    <span className='inline-block'>
+                      Easy return and exchange policy within 7 days
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>
