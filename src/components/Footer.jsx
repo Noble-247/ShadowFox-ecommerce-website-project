@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { motion } from "framer-motion";
+import BackToTop from "./BackToTop";
 
 const Footer = () => {
   return (
@@ -86,6 +87,7 @@ const Footer = () => {
         <div className='py-5 text-sm text-center'>
           <p> &copy; {new Date().getFullYear()} Xumia. All rights reserved.</p>
         </div>
+        <BackToTop />
       </footer>
     </motion.div>
   );
