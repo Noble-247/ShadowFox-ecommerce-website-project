@@ -1,21 +1,23 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Product from "./pages/Product";
-import Collections from "./pages/Collections";
-import Cart from "./pages/Cart";
-import Login from "./pages/Login";
-import Orders from "./pages/Orders";
-import PlaceOrder from "./pages/PlaceOrder";
-import NotFound from "./pages/NotFound";
-import NavBar from "./components/NavBar";
-import ShopContextProvider from "./context/ShopContext";
-import Footer from "./components/Footer";
-import PrivatePolicy from "./pages/PrivatePolicy";
-import SearchBar from "./components/SearchBar";
-import { ToastContainer /* toast */ } from "react-toastify";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Product from './pages/Product';
+import Collections from './pages/Collections';
+import Cart from './pages/Cart';
+import Login from './pages/Login';
+import Orders from './pages/Orders';
+import PlaceOrder from './pages/PlaceOrder';
+import NotFound from './pages/NotFound';
+import NavBar from './components/NavBar';
+import ShopContextProvider from './context/ShopContext';
+import Footer from './components/Footer';
+import SearchBar from './components/SearchBar';
+import { ToastContainer /* toast */ } from 'react-toastify';
 // import "react-toastify/dist/ReactToastify.css";
+
+// TODO : MAKE THE PRIVATE POLICY PAGE A MODAL
+// TODO : MAKE THE PRIVATE POLICY PAGE A MODAL
 
 function App() {
   return (
@@ -35,7 +37,6 @@ function App() {
             <Route path='login' element={<Login />} />
             <Route path='orders' element={<Orders />} />
             <Route path='place-order' element={<PlaceOrder />} />
-            <Route path='privacy-policy' element={<PrivatePolicy />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />

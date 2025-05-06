@@ -1,15 +1,15 @@
-import { useContext, useState } from "react";
-import { assets } from "../assets/assets";
-import { NavLink } from "react-router-dom";
+import { useContext, useState } from 'react';
+import { assets } from '../assets/assets';
+import { NavLink } from 'react-router-dom';
 import {
   FaSearch,
   FaUser,
   FaShoppingCart,
   FaBars,
   FaTimes,
-} from "react-icons/fa";
-import { ShopContext } from "../context/ShopContext";
-import { useNavigate } from "react-router-dom";
+} from 'react-icons/fa';
+import { ShopContext } from '../context/ShopContext';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
   const [visible, setVisible] = useState(false);
@@ -19,7 +19,7 @@ const NavBar = () => {
   // Function to show the searchField that is initially set to hidden and thereafter, navigate to the collections page
   function showSearchField() {
     setShowSearchField(true);
-    navigate("/collections");
+    navigate('/collections');
   }
 
   // console.log(visible)
@@ -27,7 +27,7 @@ const NavBar = () => {
   return (
     <nav className='flex items-center justify-between py-5 font-semibold'>
       <NavLink to='/'>
-        <img src={assets.logo1} alt='Website Logo' />
+        <img src={assets.logo1} alt='Website Logo' className='w-[50px]' />
       </NavLink>
 
       <ul className='hidden md:flex gap-5 text-sm text-red-900'>
@@ -40,8 +40,7 @@ const NavBar = () => {
         <li>
           <NavLink
             to='/collections'
-            className={`flex flex-col items-center gap-1`}
-          >
+            className={`flex flex-col items-center gap-1`}>
             <p>COLLECTIONS</p>
             <hr className='w-2/4 border-none h-[2.5px] bg-gray-700 hidden' />
           </NavLink>
@@ -98,16 +97,14 @@ const NavBar = () => {
       </div>
       {/* Mobile Menu */}
       <ul
-        className={`md:hidden flex flex-col items-start gap-10 absolute top-[80px] right-0 overflow-hidden px-6 py-10 bg-red-900 text-white rounded-md transition-all duration-300 ease-in-out 
-          ${visible ? "opacity-100" : "opacity-0 hidden"}`}
-      >
+        className={`md:hidden flex flex-col items-start gap-10 absolute top-[80px] right-0 overflow-hidden px-6 py-10 bg-red-900 text-white rounded-md transition-all duration-300 ease-in-out z-50
+          ${visible ? 'opacity-100' : 'opacity-0 hidden'}`}>
         <li>
           <NavLink
             onClick={() => setVisible(false)}
             to='/'
             end
-            className={`flex flex-col items-center gap-1`}
-          >
+            className={`flex flex-col items-center gap-1`}>
             <p>HOME</p>
             <hr className='w-2/4 border-none h-[2.5px] bg-gray-300 hidden' />
           </NavLink>
@@ -116,8 +113,7 @@ const NavBar = () => {
           <NavLink
             onClick={() => setVisible(false)}
             to='/collections'
-            className={`flex flex-col items-center gap-1`}
-          >
+            className={`flex flex-col items-center gap-1`}>
             <p>COLLECTIONS</p>
             <hr className='w-2/4 border-none h-[2.5px] bg-gray-300 hidden' />
           </NavLink>
@@ -126,8 +122,7 @@ const NavBar = () => {
           <NavLink
             onClick={() => setVisible(false)}
             to='/about'
-            className={`flex flex-col items-center gap-1`}
-          >
+            className={`flex flex-col items-center gap-1`}>
             <p>ABOUT</p>
             <hr className='w-2/4 border-none h-[2.5px] bg-gray-300 hidden' />
           </NavLink>
@@ -136,8 +131,7 @@ const NavBar = () => {
           <NavLink
             onClick={() => setVisible(false)}
             to='/contact'
-            className={`flex flex-col items-center gap-1`}
-          >
+            className={`flex flex-col items-center gap-1`}>
             <p>CONTACT</p>
             <hr className='w-2/4 border-none h-[2.5px] bg-gray-300 hidden' />
           </NavLink>
