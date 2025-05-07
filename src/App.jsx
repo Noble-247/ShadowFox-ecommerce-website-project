@@ -16,9 +16,6 @@ import SearchBar from './components/SearchBar';
 import { ToastContainer /* toast */ } from 'react-toastify';
 // import "react-toastify/dist/ReactToastify.css";
 
-// TODO : MAKE THE PRIVATE POLICY PAGE A MODAL
-// TODO : MAKE THE PRIVATE POLICY PAGE A MODAL
-
 function App() {
   return (
     <Router>
