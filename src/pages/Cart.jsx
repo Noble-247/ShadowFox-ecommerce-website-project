@@ -1,13 +1,13 @@
-import useTitle from "../customHooks/useTitle";
-import { useContext, useEffect, useState } from "react";
-import { ShopContext } from "../context/ShopContext";
-import Title from "../components/Title";
-import { IoTrashBinSharp } from "react-icons/io5";
-import CartTotal from "../components/CartTotal";
-import { useNavigate } from "react-router-dom";
+import useTitle from '../customHooks/useTitle';
+import { useContext, useEffect, useState } from 'react';
+import { ShopContext } from '../context/ShopContext';
+import Title from '../components/Title';
+import { IoTrashBinSharp } from 'react-icons/io5';
+import CartTotal from '../components/CartTotal';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
-  useTitle("Cart | Xumia");
+  useTitle('Cart | Xumia');
 
   const { products, currency, cartItems, updateCartQuantity } =
     useContext(ShopContext);
@@ -59,9 +59,8 @@ const Cart = () => {
           return (
             <div
               key={index}
-              className='py-4 border-t text-gray-700 grid grid-cols-1 sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4'
-            >
-              <div className='flex items-start gap-6'>
+              className='py-4 border-t text-gray-700 grid grid-cols-[3fr_1fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-2 sm:gap-4'>
+              <div className='flex items-start gap-3 sm:gap-6'>
                 <img
                   src={productData.image[0]}
                   alt='Product image'
@@ -71,7 +70,7 @@ const Cart = () => {
                   <p className='text-xs sm:text-lg font-medium'>
                     {productData.name}
                   </p>
-                  <div className='flex items-center gap-5 mt-2'>
+                  <div className='flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-5 mt-2'>
                     <p className='text-xs sm:text-lg font-medium'>
                       {currency}
                       {productData.price}
@@ -84,7 +83,7 @@ const Cart = () => {
               </div>
               <input
                 onChange={(event) =>
-                  event.target.value === "" || event.target.value === "0"
+                  event.target.value === '' || event.target.value === '0'
                     ? null
                     : updateCartQuantity(
                         item._id,
@@ -96,12 +95,14 @@ const Cart = () => {
                 name='itemQuantity'
                 min={1}
                 defaultValue={item.quantity}
-                className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1'
+                className='border w-14 sm:w-20 px-1 sm:px-2 py-2 sm:py-1 text-center'
               />
-              <IoTrashBinSharp
-                onClick={() => updateCartQuantity(item._id, item.size, 0)}
-                className='cursor-pointer text-[20px]'
-              />
+              <div className='flex justify-center'>
+                <IoTrashBinSharp
+                  onClick={() => updateCartQuantity(item._id, item.size, 0)}
+                  className='cursor-pointer text-xl sm:text-[20px]'
+                />
+              </div>
             </div>
           );
         })}
@@ -112,9 +113,8 @@ const Cart = () => {
           <CartTotal />
           <div className='w-full text-end'>
             <button
-              onClick={() => navigate("/place-order")}
-              className='bg-red-900 hover:bg-red-700 rounded-md text-white text-sm my-8 px-8 py-3'
-            >
+              onClick={() => navigate('/place-order')}
+              className='bg-red-900 hover:bg-red-700 rounded-md text-white text-sm my-8 px-8 py-3'>
               PROCEED TO CHECKOUT
             </button>
           </div>
