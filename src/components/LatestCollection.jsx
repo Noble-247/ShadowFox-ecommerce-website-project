@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import { ShopContext } from "../context/ShopContext";
-import Title from "./Title";
-import { v4 as uuidv4 } from "uuid";
-import ProductItem from "./ProductItem";
-import { Link } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa6";
+import { useContext, useEffect, useState } from 'react';
+import { ShopContext } from '../context/ShopContext';
+import Title from './Title';
+import { v4 as uuidv4 } from 'uuid';
+import ProductItem from './ProductItem';
+import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa6';
 
 const LatestCollection = () => {
   const { products } = useContext(ShopContext);
@@ -44,9 +44,9 @@ const LatestCollection = () => {
       <div className='text-center mt-8'>
         <Link
           to='/collections'
-          className='inline-block px-6 py-2 text-gray-100 bg-red-900 hover:bg-red-700 rounded-md transition-colors'
-        >
-          See More <FaArrowRight className="inline"/>
+          className='group inline-flex items-center gap-2 px-6 py-3 text-gray-100 bg-red-900 hover:bg-red-700 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200'>
+          <span>See More</span>
+          <FaArrowRight className='transform group-hover:translate-x-1 transition-transform duration-200' />
         </Link>
       </div>
     </section>
