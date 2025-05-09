@@ -66,13 +66,33 @@ const NavBar = () => {
         />
         <div className='group relative'>
           <NavLink to='/login'>
-            <FaUser className='text-[1.2rem] text-gray-700 cursor-pointer' />
+            <FaUser className='text-[1.2rem] text-gray-700 cursor-pointer hover:text-red-900 transition-colors duration-300' />
           </NavLink>
-          <div className='group-hover:block hidden absolute right-0 dropdown-menu shadow-md p-4'>
-            <div className='flex flex-col gap-6 w-36 py-3 px-5 bg-gray-100 text-gray-700 rounded-md'>
-              <p className='cursor-pointer hover:text-gray-900'>My Profile</p>
-              <p className='cursor-pointer hover:text-gray-900'>My Orders</p>
-              <p className='cursor-pointer hover:text-gray-900'>Logout</p>
+          <div className='invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute right-0 mt-2 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0 z-50'>
+            <div className='w-48 py-4 px-6 bg-white rounded-lg shadow-lg border border-gray-100'>
+              <div className='space-y-3'>
+                <div className='border-b border-gray-100 pb-2 mb-2'>
+                  <p className='text-sm font-medium text-gray-500'>Welcome!</p>
+                </div>
+                <a
+                  href='#'
+                  className='flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-900 rounded-md transition-all duration-300 ease-in-out'>
+                  <span className='mr-2'>👤</span>
+                  My Profile
+                </a>
+                <a
+                  href='#'
+                  className='flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-900 rounded-md transition-all duration-300 ease-in-out'>
+                  <span className='mr-2'>📦</span>
+                  My Orders
+                </a>
+                <a
+                  href='#'
+                  className='flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-red-900 rounded-md transition-all duration-300 ease-in-out'>
+                  <span className='mr-2'>👋</span>
+                  Logout
+                </a>
+              </div>
             </div>
           </div>
         </div>
