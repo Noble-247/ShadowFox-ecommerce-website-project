@@ -100,7 +100,7 @@ const PlaceOrder = () => {
           {/* Left Side - Delivery Information */}
           <section className='flex-1'>
             <div className='bg-white rounded-lg shadow-md p-6 mb-8'>
-              <div className='mb-6'>
+              <div className='mb-6 text-2xl md:text-3xl'>
                 <Title titleOne='DELIVERY' titleTwo='INFORMATION' />
               </div>
 
@@ -245,7 +245,9 @@ const PlaceOrder = () => {
             </div>
 
             <div className='bg-white rounded-lg shadow-md p-6'>
-              <Title titleOne='PAYMENT' titleTwo='METHOD' />
+              <div className='text-2xl md:text-3xl mb-3'>
+                <Title titleOne='PAYMENT' titleTwo='METHOD' />
+              </div>
               <div className='space-y-4 mt-6'>
                 <div
                   onClick={() => setPaymentMethod(method.stripe)}

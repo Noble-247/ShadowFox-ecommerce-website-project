@@ -20,7 +20,7 @@ function App() {
   return (
     <Router>
       <ShopContextProvider>
-        <div className='px-4 sm:px-[4.5vw] md:px-[5vw] lg:px-[7vw] xl:px-[14vw]'>
+        <div className='container mx-auto px-4 md:px-6 lg:px-8 xl:px-12 max-w-7xl'>
           <ToastContainer />
           <NavBar />
           <SearchBar />

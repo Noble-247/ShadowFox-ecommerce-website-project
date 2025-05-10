@@ -30,7 +30,7 @@ const Orders = () => {
 
       <section className='container mx-auto px-4 py-8'>
         <div className='bg-white rounded-lg shadow-lg p-6'>
-          <div className='mb-8'>
+          <div className='mb-8 text-2xl md:text-3xl'>
             <Title titleOne='ORDER' titleTwo='HISTORY' />
           </div>
 

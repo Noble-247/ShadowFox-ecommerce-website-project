@@ -12,6 +12,10 @@ const Login = () => {
     toast.info('This feature will be enabled soon. stay tuned 😊!');
   }
 
+  function handleClick() {
+    toast.info('This feature will be enabled soon. stay tuned 😊!');
+  }
+
   return (
     <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-red-500 via-red-700 to-red-900 text-gray-50'>
       <form
@@ -51,7 +55,7 @@ const Login = () => {
           className='border border-gray-300 rounded-md py-3 px-4 w-full focus:outline-none focus:ring-2 focus:ring-red-500 transition-all mt-4'
         />
         <div className='w-full flex justify-between text-sm mt-2 text-gray-600'>
-          <p className='cursor-pointer hover:underline'>
+          <p onClick={handleClick} className='cursor-pointer hover:underline'>
             Forgot your password?
           </p>
           {currentState === 'Sign In' ? (
