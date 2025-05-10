@@ -48,27 +48,33 @@ const Home = () => {
       {showModal && (
         <div
           onClick={handleOutsideModalClick}
-          className='fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center'>
-          <div className='bg-white p-6 rounded-lg shadow-xl w-[80%] max-w-md'>
-            <h2 className='text-xl font-bold mb-4'>Under Construction</h2>
-            <p className='mb-6'>
+          className='fixed inset-0 bg-gradient-to-b from-black/70 to-black/50 backdrop-blur-sm z-50 flex items-center justify-center transition-all duration-300 ease-in-out'>
+          <div className='bg-white p-8 rounded-xl shadow-2xl w-[90%] max-w-md transform scale-100 transition-transform duration-300 ease-out'>
+            <h2 className='text-2xl font-bold mb-4 text-gray-800 border-b pb-2'>
+              Under Construction
+            </h2>
+            <p className='mb-6 text-gray-600 leading-relaxed'>
               This website is currently under construction and will be fully
               ready for use soon. Thank you for your patience!
             </p>
             <button
               onClick={handleCloseModal}
-              className='bg-red-900 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors'>
+              className='w-full bg-red-900 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 font-medium'>
               Close
             </button>
           </div>
         </div>
       )}
-      <main>
-        <Hero />
-        <LatestCollection />
-        <BestSeller />
-        <OurPolicy />
-        <NewsLetterBox />
+      <main className='min-h-screen'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+          <Hero />
+          <div className='space-y-16 py-12'>
+            <LatestCollection />
+            <BestSeller />
+            <OurPolicy />
+            <NewsLetterBox />
+          </div>
+        </div>
       </main>
     </>
   );

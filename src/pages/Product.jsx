@@ -1,20 +1,20 @@
-import { useParams } from "react-router-dom";
-import { useContext, useState, useEffect, useCallback } from "react";
-import { ShopContext } from "../context/ShopContext";
-import { IoStarSharp } from "react-icons/io5";
-import NotFound from "./NotFound";
-import RelatedProducts from "../components/RelatedProducts";
-import { SiTicktick } from "react-icons/si";
-import useTitle from "../customHooks/useTitle";
+import { useParams } from 'react-router-dom';
+import { useContext, useState, useEffect, useCallback } from 'react';
+import { ShopContext } from '../context/ShopContext';
+import { IoStarSharp } from 'react-icons/io5';
+import NotFound from './NotFound';
+import RelatedProducts from '../components/RelatedProducts';
+import { SiTicktick } from 'react-icons/si';
+import useTitle from '../customHooks/useTitle';
 
 const Product = () => {
-  useTitle("Product | Xumia");
+  useTitle('Product | Xumia');
 
   const { productId } = useParams();
   const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(null);
-  const [mainProductImage, setMainProductImage] = useState("");
-  const [productSize, setProductSize] = useState("");
+  const [mainProductImage, setMainProductImage] = useState('');
+  const [productSize, setProductSize] = useState('');
 
   // Get the product data from the products array
   const fetchProductData = useCallback(() => {
@@ -32,125 +32,135 @@ const Product = () => {
   }, [fetchProductData]);
 
   return (
-    <section>
+    <section className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
       {productData ? (
-        <article className='border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100'>
+        <article className='border-t-2 pt-10 transition-all duration-300'>
           {/* Product Data */}
-          <div className='flex flex-col sm:flex-row gap-12 sm:gap-12'>
+          <div className='grid lg:grid-cols-2 gap-12'>
             {/* Product Image */}
-            <div className='flex flex-col-reverse sm:flex-row flex-1 gap-3'>
-              <div className='flex sm:flex-col overflow-x-auto justify-between sm:justify-normal w-full sm:w-[10%]'>
+            <div className='flex flex-col-reverse sm:flex-row gap-4'>
+              <div className='flex sm:flex-col overflow-x-auto gap-4 w-full sm:w-24'>
                 {productData.image.map((item, index) => (
                   <img
                     onClick={() => setMainProductImage(item)}
                     src={item}
                     key={index}
                     alt='Product Image'
-                    className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer'
+                    className={`w-20 h-20 object-cover cursor-pointer rounded-lg hover:opacity-80 transition-opacity duration-200 ${
+                      mainProductImage === item ? 'border-2 border-red-900' : ''
+                    }`}
                   />
                 ))}
               </div>
-              <div className='w-full sm:w-[45%]'>
+              <div className='flex-1'>
                 <img
                   src={mainProductImage}
                   alt='Product Image'
-                  className='w-full h-auto'
+                  className='w-full h-auto rounded-lg shadow-lg hover:scale-105 transition-transform duration-300'
                 />
               </div>
             </div>
 
             {/* Product Details */}
-            <div className='flex-1'>
-              <h1 className='font-medium text-2xl mt-2'>
+            <div className='space-y-6'>
+              <h1 className='font-semibold text-3xl text-gray-900'>
                 {productData.name}
               </h1>
-              <div className='flex items-center gap-1 mt-2'>
-                <IoStarSharp className='text-yellow-700' />
-                <IoStarSharp className='text-yellow-700' />
-                <IoStarSharp className='text-yellow-700' />
-                <IoStarSharp className='text-yellow-700' />
-                <IoStarSharp className='text-gray-400' />
-                <p className='pl-2'>(120)</p>
+              <div className='flex items-center gap-1'>
+                {[...Array(5)].map((_, index) => (
+                  <IoStarSharp
+                    key={index}
+                    className={`text-xl ${
+                      index < 4 ? 'text-yellow-500' : 'text-gray-300'
+                    }`}
+                  />
+                ))}
+                <p className='pl-2 text-gray-600'>(120)</p>
               </div>
-              <p className='mt-5 text-3xl font-medium'>
+              <p className='text-4xl font-bold text-red-900'>
                 {currency}
                 {productData.price}
               </p>
-              <p className='mt-5 text-gray-500'>
-                <a className='hover:underline block' href='#full-Description'>
-                  {productData.description.slice(0, 200)}.... See More
+              <p className='text-gray-600 text-lg'>
+                <a
+                  className='hover:text-red-900 transition-colors duration-200'
+                  href='#full-Description'>
+                  {productData.description.slice(0, 200)}...
+                  <span className='font-medium ml-2 hover:underline'>
+                    See More
+                  </span>
                 </a>
               </p>
-              <div className='flex flex-col gap-4 my-8'>
-                <p>Select Size</p>
-                <div className='flex gap-2'>
-                  {productData.sizes.map((item, index) => (
-                    <button
-                      onClick={() => setProductSize(item)}
-                      className={`border py-2 px-4 bg-gray-300 rounded-md ${
-                        productSize === item ? "border-red-900" : ""
-                      }`}
-                      key={index}
-                    >
-                      {item}
-                    </button>
-                  ))}
-                </div>{" "}
+              <div className='space-y-6'>
+                <div className='space-y-4'>
+                  <p className='font-medium text-lg'>Select Size</p>
+                  <div className='flex flex-wrap gap-3'>
+                    {productData.sizes.map((item, index) => (
+                      <button
+                        onClick={() => setProductSize(item)}
+                        className={`px-6 py-3 rounded-lg transition-all duration-200 ${
+                          productSize === item
+                            ? 'bg-red-900 text-white'
+                            : 'bg-gray-100 hover:bg-gray-200'
+                        }`}
+                        key={index}>
+                        {item}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 <button
                   onClick={() => addToCart(productData._id, productSize)}
-                  className='bg-red-900 text-white px-8 py-3 text-sm active:bg-red-700'
-                >
+                  className='w-full sm:w-auto px-8 py-4 bg-red-900 text-white rounded-lg font-medium hover:bg-red-800 transition-colors duration-200 transform hover:scale-105'>
                   ADD TO CART
                 </button>
-                <hr className='mt-5' />
-                <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
-                  <p>
-                    <SiTicktick className='inline-block mr-2' />
-                    <span className='inline-block'>
-                      100% original Product
-                    </span>
-                  </p>
-                  <p>
-                    <SiTicktick className='inline-block mr-2' />
-                    <span className='inline-block'>
-                      Free Delivery on order above $50
-                    </span>
-                  </p>
-                  <p>
-                    <SiTicktick className='inline-block mr-2' />
-                    <span className='inline-block'>
-                      Pay on delivery is available on this product
-                    </span>
-                  </p>
-                  <p>
-                    <SiTicktick className='inline-block mr-2' />
-                    <span className='inline-block'>
-                      Easy return and exchange policy within 7 days
-                    </span>
-                  </p>
+                <hr className='my-8' />
+                <div className='grid sm:grid-cols-2 gap-4 text-gray-600'>
+                  {[
+                    '100% original Product',
+                    'Free Delivery on order above $50',
+                    'Pay on delivery is available',
+                    'Easy 7-day returns & exchange',
+                  ].map((text, index) => (
+                    <div
+                      key={index}
+                      className='flex items-center gap-2 bg-gray-50 p-3 rounded-lg'>
+                      <SiTicktick className='text-red-900' />
+                      <span>{text}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
 
           {/* Production Description and Review Section */}
-          <div className='mt-12'>
-            <div className='flex'>
-              <p className='font-extrabold border px-5 py-3 text-sm'>
+          <div className='mt-16'>
+            <div className='flex gap-1'>
+              <button className='font-semibold px-6 py-3 bg-red-900 text-white rounded-t-lg'>
                 Description
-              </p>
-              <p className='border px-5 py-3 text-sm'>Reviews (120)</p>
+              </button>
+              <button className='px-6 py-3 text-gray-600 hover:bg-gray-100 rounded-t-lg transition-colors duration-200'>
+                Reviews (120)
+              </button>
             </div>
-            <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
-              <p id='full-Description'>{productData.description}</p>
+            <div className='border rounded-lg p-6 prose max-w-none'>
+              <p
+                id='full-Description'
+                className='text-gray-600 leading-relaxed'>
+                {productData.description}
+              </p>
             </div>
           </div>
 
           {/* Display Related Products */}
-          <RelatedProducts
-            category={productData.category}
-            subCategory={productData.subCategory}
-          />
+          <div className='mt-16'>
+            <h2 className='text-2xl font-semibold mb-8'>Related Products</h2>
+            <RelatedProducts
+              category={productData.category}
+              subCategory={productData.subCategory}
+            />
+          </div>
         </article>
       ) : (
         <NotFound />

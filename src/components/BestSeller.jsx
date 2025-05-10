@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import { ShopContext } from "../context/ShopContext";
-import Title from "./Title";
-import ProductItem from "./ProductItem";
+import { useContext, useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { ShopContext } from '../context/ShopContext';
+import Title from './Title';
+import ProductItem from './ProductItem';
 
 const BestSeller = () => {
   const { products } = useContext(ShopContext);

@@ -35,7 +35,7 @@ const Cart = () => {
   if (cartData.length === 0) {
     return (
       <section className='border-t pt-14'>
-        <div className='text-2xl mb-3'>
+        <div className='text-2xl md:text-3xl mb-3'>
           <Title titleOne='YOUR' titleTwo='CART' />
         </div>
         <p className='text-center text-gray-700 text-[24px]'>
