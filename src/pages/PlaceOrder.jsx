@@ -2,17 +2,17 @@ import useTitle from '../customHooks/useTitle';
 import { useState } from 'react';
 import CartTotal from '../components/CartTotal';
 import Title from '../components/Title';
-import { FaStripe } from 'react-icons/fa';
-import { FaCcPaypal } from 'react-icons/fa6';
+// import { FaStripe } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { assets } from '../assets/assets';
 
 const PlaceOrder = () => {
   useTitle('Place Order | Xumia');
 
   const method = {
     cashOnDelivery: 'Cash On Delivery',
-    stripe: 'Stripe',
-    paypal: 'PayPal',
+    /*  stripe: 'Stripe', */
+    paystack: 'Paystack',
   };
   const [paymentMethod, setPaymentMethod] = useState(method.cashOnDelivery);
   const navigate = useNavigate();
@@ -249,7 +249,7 @@ const PlaceOrder = () => {
                 <Title titleOne='PAYMENT' titleTwo='METHOD' />
               </div>
               <div className='space-y-4 mt-6'>
-                <div
+                {/*  <div
                   onClick={() => setPaymentMethod(method.stripe)}
                   className={`flex items-center p-4 border rounded-lg cursor-pointer transition-all ${
                     paymentMethod === method.stripe
@@ -264,22 +264,26 @@ const PlaceOrder = () => {
                     }`}
                   />
                   <FaStripe className='text-[40px] text-blue-700' />
-                </div>
+                </div> */}
                 <div
-                  onClick={() => setPaymentMethod(method.paypal)}
+                  onClick={() => setPaymentMethod(method.paystack)}
                   className={`flex items-center p-4 border rounded-lg cursor-pointer transition-all ${
-                    paymentMethod === method.paypal
+                    paymentMethod === method.paystack
                       ? 'border-blue-500 bg-blue-50'
                       : 'border-gray-200 hover:border-blue-500'
                   }`}>
                   <div
                     className={`w-4 h-4 rounded-full border-2 mr-4 ${
-                      paymentMethod === method.paypal
+                      paymentMethod === method.paystack
                         ? 'border-blue-500 bg-blue-500'
                         : 'border-gray-300'
                     }`}
                   />
-                  <FaCcPaypal className='text-[40px] text-blue-700' />
+                  <img
+                    src={assets.paystackLogo}
+                    alt='Paystack'
+                    className='w-[100px] h-[40px] object-contain'
+                  />
                 </div>
                 <div
                   onClick={() => setPaymentMethod(method.cashOnDelivery)}

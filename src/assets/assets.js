@@ -57,12 +57,14 @@ import logo1 from './icons8-e-commerce-100.png';
 import hero_img from './hero_img.png';
 import about_img from './about_img.png';
 import contact_img from './contact_img.png';
+import paystackLogo from './-zx3KvN-paystack.svg';
 
 export const assets = {
   logo1,
   hero_img,
   about_img,
   contact_img,
+  paystackLogo,
 };
 
 export const products = [
