@@ -155,7 +155,6 @@ const Product = () => {
 
           {/* Display Related Products */}
           <div className='mt-16'>
-            <h2 className='text-2xl font-semibold mb-8'>Related Products</h2>
             <RelatedProducts
               category={productData.category}
               subCategory={productData.subCategory}
